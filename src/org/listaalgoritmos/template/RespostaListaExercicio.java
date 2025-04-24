@@ -17,6 +17,7 @@ public class RespostaListaExercicio {
 		imprimirArrayInverso(new int[]{1, 2, 3, 4, 5});
 		imprimirElementosPrimos(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
 		imprimirElementosImpares(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
+		imprimirElementosPares(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
 	}
 
 	/**
@@ -153,7 +154,13 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosPares(int[] array) 
 	{
-		System.out.print("");
+		System.out.print("Números Pares: ");
+		for (int n : array) {
+				if (n % 2 == 0) {
+					System.out.print(n + " ");
+				}
+		}
+		System.out.println();
 	}
 	
 	
