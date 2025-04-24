@@ -14,11 +14,12 @@ public class RespostaListaExercicio {
 		maiorEntreDoisInteiros(5, 10);
 		verificarParImpar(1);
 		calcularMediaNotas(new float[]{10.0f, 6.3f, 7.5f, 9.7f});
-		imprimirArrayInverso(new int[]{1, 2, 3, 4, 5});
+		imprimirArrayInverso(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
 		imprimirElementosPrimos(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
 		imprimirElementosImpares(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
 		imprimirElementosPares(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
 		imprimirMaiorMenorElemento(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
+		calcularMediaAritmetica(new int[]{10, 6, 7, 9});
 	}
 
 	/**
@@ -185,7 +186,7 @@ public class RespostaListaExercicio {
 	        }
 	    }
 	    
-	    System.out.printf("%d %d ",maior, menor);
+	    System.out.printf("Maior e menor: %d %d %n",maior, menor);
 	}
 	
 	
@@ -197,7 +198,13 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularMediaAritmetica(int[] array) 
 	{
-		return 0f;
+		int soma = 0;
+		for (int n : array) {
+			soma += n;
+		}
+		float media = (float) soma / array.length;
+		System.out.printf("Média Aritmética: %.2f%n", media);
+		return media;
 	}
 	
 }
