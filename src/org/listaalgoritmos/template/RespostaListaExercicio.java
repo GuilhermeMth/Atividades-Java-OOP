@@ -1,25 +1,24 @@
 package org.listaalgoritmos.template;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class RespostaListaExercicio {
-	
+
 	/*
 	 * Utilize apenas o método main para testar a implementação dos métodos. 
 	 * Não se faz necessário implementar dentro do escopo do método.
 	 */
 	public static void main(String[] args) {
-			
-		System.out.printf("IMC: %.2f%n",calcularImc(70f, 1.85f));
-		System.out.printf("Área do Trapezio: %.2f%n",calcularAreaTrapezio(20f, 10f ,1.85f));
-		System.out.printf("Maior valor: %d%n",maiorEntreDoisInteiros(5, 10));
-		System.out.printf("O número é par? %b%n",verificarParImpar(1));
-		System.out.printf("A média é %.1f%n",calcularMediaNotas(new float[]{10.0f, 6.3f, 7.5f, 9.7f}));
-		System.out.printf("Array Invertido: %s%n", Arrays.toString(imprimirArrayInverso(new int[]{1, 2, 3, 4, 5})));
-		
+		calcularImc(70f, 1.85f);
+		calcularAreaTrapezio(20f, 10f, 1.85f);
+		maiorEntreDoisInteiros(5, 10);
+		verificarParImpar(1);
+		calcularMediaNotas(new float[]{10.0f, 6.3f, 7.5f, 9.7f});
+		imprimirArrayInverso(new int[]{1, 2, 3, 4, 5});
+		imprimirElementosPrimos(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
+		imprimirElementosImpares(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
 	}
-	
+
 	/**
 	 * Método deve calcular o IMC utilizando peso e altura. Como resultado
 	 * o método deve retornar uma variável resultado do tipo float.
@@ -27,12 +26,12 @@ public class RespostaListaExercicio {
 	 * @param altura
 	 * @return resultado
 	 */
-	public static float calcularImc(float peso, float altura) 
-	{
+	public static float calcularImc(float peso, float altura) {
 		float resultado = peso / (altura * altura);
+		System.out.printf("IMC: %.2f%n", resultado);
 		return resultado;
 	}
-	
+
 	/**
 	 * Método deve calcular a área do trapézio independente da unidade de medida.
 	 * Como resultado, o método deve retornar a área calculada.
@@ -41,12 +40,12 @@ public class RespostaListaExercicio {
 	 * @param altura
 	 * @return areaTrapezio
 	 */
-	public static float calcularAreaTrapezio(float baseMaior, float baseMenor, float altura) 
-	{	
+	public static float calcularAreaTrapezio(float baseMaior, float baseMenor, float altura) {
 		float areaTrapezio = ((baseMaior + baseMenor) * altura) / 2;
+		System.out.printf("Área do Trapezio: %.2f%n", areaTrapezio);
 		return areaTrapezio;
 	}
-	
+
 	/**
 	 * O método deve calcular o maior entre dois inteiros, que são fornecidos
 	 * como argumento do método. O retorno deve ser o maior valor dado
@@ -55,19 +54,12 @@ public class RespostaListaExercicio {
 	 * @param b
 	 * @return maiorValor
 	 */
-	public static int maiorEntreDoisInteiros(int a, int b) 
-	{
-		int maiorValor = 0;
-		
-		if (a > b) {
-			maiorValor = a;
-		} else {
-			maiorValor = b;
-		}
-
+	public static int maiorEntreDoisInteiros(int a, int b) {
+		int maiorValor = (a > b) ? a : b;
+		System.out.printf("Maior valor: %d%n", maiorValor);
 		return maiorValor;
 	}
-	
+
 	/**
 	 * Método verifica se o número apresentado como argumento é ímpar ou par.
 	 * caso seja par, o retorno do método deve ser verdadeiro. Caso contrário,
@@ -75,11 +67,12 @@ public class RespostaListaExercicio {
 	 * @param numero
 	 * @return condicao
 	 */
-	public static boolean verificarParImpar(int numero) 
-	{
-		return numero % 2 == 0;
+	public static boolean verificarParImpar(int numero) {
+		boolean condicao = numero % 2 == 0;
+		System.out.printf("O número é par? %b%n", condicao);
+		return condicao;
 	}
-	
+
 	/**
 	 * Método calcula a média aritmetica dos elementos float a partir de um array. 
 	 * O retorno deve ser o resultado do cálculo da média.
@@ -88,15 +81,14 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularMediaNotas(float[] notas) {
 		float soma = 0f;
-		
 		for (float n : notas) {
 			soma += n;
 		}
-		
 		float media = soma / notas.length;
+		System.out.printf("A média é %.1f%n", media);
 		return media;
 	}
-	
+
 	/**
 	 * Método imprime array de inteiros no sentido inverso, separando os elementos por vírgula.
 	 * O último elemento impresso não deve preceder vírgula. Use o System.out.print() para imprimir os valores.
@@ -104,31 +96,37 @@ public class RespostaListaExercicio {
 	 * @param array
 	 * @return 
 	 */
-	public static int[] imprimirArrayInverso(int[] array)
-	{
-		int tamanho = array.length;
-	    int[] invertido = new int[tamanho];
-
-	    for (int i = 0; i < tamanho; i++) {
-	        invertido[i] = array[tamanho - 1 - i];
-	    }
-	    
-	    return invertido;
+	public static int[] imprimirArrayInverso(int[] array) {
+		int[] invertido = new int[array.length];
+		for (int i = 0; i < array.length; i++) {
+			invertido[i] = array[array.length - 1 - i];
+		}
+		System.out.printf("Array Invertido: %s%n", Arrays.toString(invertido));
+		return invertido;
 	}
-		
-	
+
 	/**
 	 * Método deve imprimir os elementos primos de um array de inteiros. O formato da impressão 
 	 * deve ser feito numa única linha, utilizando espaço em branco (" ") entre os elementos e 
 	 * após o último elemento. Utilize System.out.print()
 	 * @param array
 	 */
-	public static void imprimirElementosPrimos(int[] array) 
-	{
-		System.out.print("");
+	public static void imprimirElementosPrimos(int[] array) {
+		System.out.print("Números primos: ");
+		for (int n : array) {
+			int contador = 0;
+			for (int i = 1; i <= n; i++) {
+				if (n % i == 0) {
+					contador++;
+				}
+			}
+			if (contador == 2) {
+				System.out.print(n + " ");
+			}
+		}
+		System.out.println();
 	}
-	
-	
+
 	/**
 	 * Método deve imprimir os elementos ímpares de um array de inteiros. O formato da impressão 
 	 * deve ser feito numa única linha, utilizando espaço em branco (" ") entre os elementos e 
@@ -137,7 +135,13 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosImpares(int[] array) 
 	{
-		System.out.print("");
+		System.out.print("Números Impares: ");
+		for (int n : array) {
+				if (n % 2 == 1) {
+					System.out.print(n + " ");
+				}
+		}
+		System.out.println();
 	}
 	
 	
