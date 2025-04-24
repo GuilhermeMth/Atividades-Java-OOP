@@ -14,6 +14,7 @@ public class RespostaListaExercicio {
 		System.out.printf("Área do Trapezio: %.2f\n",calcularAreaTrapezio(20f, 10f ,1.85f));
 		System.out.printf("Maior valor: %d\n",maiorEntreDoisInteiros(5, 10));
 		System.out.printf("O número é par? %b \n",verificarParImpar(1));
+		System.out.printf("A média é %.1f \n",calcularMediaNotas(new float[]{10.0f, 6.3f, 7.5f, 9.7f}));
 		
 	}
 	
@@ -84,7 +85,14 @@ public class RespostaListaExercicio {
 	 * @return media
 	 */
 	public static float calcularMediaNotas(float[] notas) {
-		return 0f;
+		float soma = 0f;
+		
+		for (float n : notas) {
+			soma += n;
+		}
+		
+		float media = soma / notas.length;
+		return media;
 	}
 	
 	/**
