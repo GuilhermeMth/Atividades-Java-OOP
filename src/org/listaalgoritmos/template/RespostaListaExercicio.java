@@ -1,6 +1,6 @@
 package org.listaalgoritmos.template;
 
-
+import java.util.Scanner;
 
 public class RespostaListaExercicio {
 	
@@ -9,6 +9,8 @@ public class RespostaListaExercicio {
 	 * Não se faz necessário implementar dentro do escopo do método.
 	 */
 	public static void main(String[] args) {
+			
+		System.out.printf("%.0f",calcularImc(70f, 1.85f));
 		
 	}
 	
@@ -21,7 +23,8 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularImc(float peso, float altura) 
 	{
-		return 0f;
+		float resultado = peso / (altura * altura);
+		return resultado;
 	}
 	
 	/**
