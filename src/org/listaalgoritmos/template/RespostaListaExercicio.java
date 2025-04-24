@@ -13,6 +13,7 @@ public class RespostaListaExercicio {
 		System.out.printf("IMC: %.2f\n",calcularImc(70f, 1.85f));
 		System.out.printf("Área do Trapezio: %.2f\n",calcularAreaTrapezio(20f, 10f ,1.85f));
 		System.out.printf("Maior valor: %d\n",maiorEntreDoisInteiros(5, 10));
+		System.out.printf("O número é par? %b \n",verificarParImpar(1));
 		
 	}
 	
@@ -73,7 +74,7 @@ public class RespostaListaExercicio {
 	 */
 	public static boolean verificarParImpar(int numero) 
 	{
-		return false;		
+		return numero % 2 == 0;
 	}
 	
 	/**
