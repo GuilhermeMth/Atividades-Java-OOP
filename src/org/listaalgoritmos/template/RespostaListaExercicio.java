@@ -10,7 +10,9 @@ public class RespostaListaExercicio {
 	 */
 	public static void main(String[] args) {
 			
-		System.out.printf("%.0f",calcularImc(70f, 1.85f));
+		System.out.printf("IMC: %.2f\n",calcularImc(70f, 1.85f));
+		System.out.printf("Área do Trapezio: %.2f\n",calcularAreaTrapezio(20f, 10f ,1.85f));
+		System.out.printf("Maior valor: %d\n",maiorEntreDoisInteiros(5, 10));
 		
 	}
 	
@@ -37,7 +39,8 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularAreaTrapezio(float baseMaior, float baseMenor, float altura) 
 	{	
-		return 0f;
+		float areaTrapezio = ((baseMaior + baseMenor) * altura) / 2;
+		return areaTrapezio;
 	}
 	
 	/**
@@ -50,7 +53,15 @@ public class RespostaListaExercicio {
 	 */
 	public static int maiorEntreDoisInteiros(int a, int b) 
 	{
-		return 0;
+		int maiorValor = 0;
+		
+		if (a > b) {
+			maiorValor = a;
+		} else {
+			maiorValor = b;
+		}
+
+		return maiorValor;
 	}
 	
 	/**
