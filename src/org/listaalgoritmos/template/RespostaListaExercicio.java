@@ -1,5 +1,6 @@
 package org.listaalgoritmos.template;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class RespostaListaExercicio {
@@ -10,11 +11,12 @@ public class RespostaListaExercicio {
 	 */
 	public static void main(String[] args) {
 			
-		System.out.printf("IMC: %.2f\n",calcularImc(70f, 1.85f));
-		System.out.printf("Área do Trapezio: %.2f\n",calcularAreaTrapezio(20f, 10f ,1.85f));
-		System.out.printf("Maior valor: %d\n",maiorEntreDoisInteiros(5, 10));
-		System.out.printf("O número é par? %b \n",verificarParImpar(1));
-		System.out.printf("A média é %.1f \n",calcularMediaNotas(new float[]{10.0f, 6.3f, 7.5f, 9.7f}));
+		System.out.printf("IMC: %.2f%n",calcularImc(70f, 1.85f));
+		System.out.printf("Área do Trapezio: %.2f%n",calcularAreaTrapezio(20f, 10f ,1.85f));
+		System.out.printf("Maior valor: %d%n",maiorEntreDoisInteiros(5, 10));
+		System.out.printf("O número é par? %b%n",verificarParImpar(1));
+		System.out.printf("A média é %.1f%n",calcularMediaNotas(new float[]{10.0f, 6.3f, 7.5f, 9.7f}));
+		System.out.printf("Array Invertido: %s%n", Arrays.toString(imprimirArrayInverso(new int[]{1, 2, 3, 4, 5})));
 		
 	}
 	
@@ -100,11 +102,20 @@ public class RespostaListaExercicio {
 	 * O último elemento impresso não deve preceder vírgula. Use o System.out.print() para imprimir os valores.
 	 * Os elementos devem ser impresso numa única linha.
 	 * @param array
+	 * @return 
 	 */
-	public static void imprimirArrayInverso(int[] array)
+	public static int[] imprimirArrayInverso(int[] array)
 	{
-		System.out.print("");
+		int tamanho = array.length;
+	    int[] invertido = new int[tamanho];
+
+	    for (int i = 0; i < tamanho; i++) {
+	        invertido[i] = array[tamanho - 1 - i];
+	    }
+	    
+	    return invertido;
 	}
+		
 	
 	/**
 	 * Método deve imprimir os elementos primos de um array de inteiros. O formato da impressão 
