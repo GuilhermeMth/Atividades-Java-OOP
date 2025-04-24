@@ -18,6 +18,7 @@ public class RespostaListaExercicio {
 		imprimirElementosPrimos(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
 		imprimirElementosImpares(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
 		imprimirElementosPares(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
+		imprimirMaiorMenorElemento(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
 	}
 
 	/**
@@ -172,8 +173,21 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirMaiorMenorElemento(int[] array) 
 	{
-		System.out.print("");
+		int maior = array[0];
+	    int menor = array[0];
+
+	    for (int num : array) {
+	        if (num > maior) {
+	            maior = num; 
+	        }
+	        if (num < menor) {
+	            menor = num; 
+	        }
+	    }
+	    
+	    System.out.printf("%d %d ",maior, menor);
 	}
+	
 	
 	/**
 	 * O método calcula a média aritmética dos elementos de um array de inteiros. 
