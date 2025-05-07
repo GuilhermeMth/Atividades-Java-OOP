@@ -1,6 +1,5 @@
 package org.listaalgoritmos.template;
 
-import java.util.Arrays;
 
 public class RespostaListaExercicio {
 
@@ -9,17 +8,7 @@ public class RespostaListaExercicio {
 	 * Não se faz necessário implementar dentro do escopo do método.
 	 */
 	public static void main(String[] args) {
-		calcularImc(70f, 1.85f);
-		calcularAreaTrapezio(20f, 10f, 1.85f);
-		maiorEntreDoisInteiros(5, 10);
-		verificarParImpar(1);
-		calcularMediaNotas(new float[]{10.0f, 6.3f, 7.5f, 9.7f});
-		imprimirArrayInverso(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
-		imprimirElementosPrimos(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
-		imprimirElementosImpares(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
-		imprimirElementosPares(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
-		imprimirMaiorMenorElemento(new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
-		calcularMediaAritmetica(new int[]{10, 6, 7, 9});
+	
 	}
 
 	/**
@@ -31,7 +20,6 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularImc(float peso, float altura) {
 		float resultado = peso / (altura * altura);
-		System.out.printf("IMC: %.2f%n", resultado);
 		return resultado;
 	}
 
@@ -45,7 +33,6 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularAreaTrapezio(float baseMaior, float baseMenor, float altura) {
 		float areaTrapezio = ((baseMaior + baseMenor) * altura) / 2;
-		System.out.printf("Área do Trapezio: %.2f%n", areaTrapezio);
 		return areaTrapezio;
 	}
 
@@ -59,7 +46,6 @@ public class RespostaListaExercicio {
 	 */
 	public static int maiorEntreDoisInteiros(int a, int b) {
 		int maiorValor = (a > b) ? a : b;
-		System.out.printf("Maior valor: %d%n", maiorValor);
 		return maiorValor;
 	}
 
@@ -72,7 +58,6 @@ public class RespostaListaExercicio {
 	 */
 	public static boolean verificarParImpar(int numero) {
 		boolean condicao = numero % 2 == 0;
-		System.out.printf("O número é par? %b%n", condicao);
 		return condicao;
 	}
 
@@ -88,7 +73,6 @@ public class RespostaListaExercicio {
 			soma += n;
 		}
 		float media = soma / notas.length;
-		System.out.printf("A média é %.1f%n", media);
 		return media;
 	}
 
@@ -99,13 +83,13 @@ public class RespostaListaExercicio {
 	 * @param array
 	 * @return 
 	 */
-	public static int[] imprimirArrayInverso(int[] array) {
-		int[] invertido = new int[array.length];
-		for (int i = 0; i < array.length; i++) {
-			invertido[i] = array[array.length - 1 - i];
-		}
-		System.out.printf("Array Invertido: %s%n", Arrays.toString(invertido));
-		return invertido;
+	public static void imprimirArrayInverso(int[] array) {
+	    for (int i = array.length - 1; i >= 0; i--) {
+	        System.out.print(array[i]);
+	        if (i != 0) {
+	            System.out.print(",");
+	        }
+	    }
 	}
 
 	/**
@@ -115,7 +99,6 @@ public class RespostaListaExercicio {
 	 * @param array
 	 */
 	public static void imprimirElementosPrimos(int[] array) {
-		System.out.print("Números primos: ");
 		for (int n : array) {
 			int contador = 0;
 			for (int i = 1; i <= n; i++) {
@@ -127,7 +110,6 @@ public class RespostaListaExercicio {
 				System.out.print(n + " ");
 			}
 		}
-		System.out.println();
 	}
 
 	/**
@@ -138,13 +120,11 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosImpares(int[] array) 
 	{
-		System.out.print("Números Impares: ");
 		for (int n : array) {
-				if (n % 2 == 1) {
+				if (n % 2 != 0) {
 					System.out.print(n + " ");
 				}
 		}
-		System.out.println();
 	}
 	
 	
@@ -156,13 +136,11 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosPares(int[] array) 
 	{
-		System.out.print("Números Pares: ");
 		for (int n : array) {
 				if (n % 2 == 0) {
 					System.out.print(n + " ");
 				}
 		}
-		System.out.println();
 	}
 	
 	
@@ -186,7 +164,7 @@ public class RespostaListaExercicio {
 	        }
 	    }
 	    
-	    System.out.printf("Maior e menor: %d %d %n",maior, menor);
+	    System.out.print(maior + " " + menor + " ");
 	}
 	
 	
@@ -203,7 +181,6 @@ public class RespostaListaExercicio {
 			soma += n;
 		}
 		float media = (float) soma / array.length;
-		System.out.printf("Média Aritmética: %.2f%n", media);
 		return media;
 	}
 	
